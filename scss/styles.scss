@@ -1,0 +1,199 @@
+$formcolor: #CFCFCF;
+$white: #e6e6e6;
+$blue: rgba(33, 160, 171, 1);
+$green: rgba(33, 171, 114, 1);
+
+@mixin responsive-font-size($min-font-size, $max-font-size, $min-screen-width, $max-screen-width, $font-size-step: 0.1em) {
+
+    font-size: $max-font-size;
+    @media all and (max-width: $min-screen-width) {
+        font-size: $min-font-size;
+    }
+
+    @if $font-size-step <= 0 {
+        @warn "parameter to responsive-font-size: font-size-step must be greater than 0";
+    }
+    @else {
+        $min-scale-factor: $min-font-size / $min-screen-width / 1em * 1px;
+        $max-scale-factor: $max-font-size / $max-screen-width / 1em * 1px;
+
+        $screen-width: round($max-screen-width);
+        $font-size: $max-font-size;
+
+        @while $screen-width >= $min-screen-width {
+
+            $progress: ($screen-width - $min-screen-width) / ($max-screen-width - $min-screen-width);
+            $scale-factor: $min-scale-factor + $progress * ($max-scale-factor - $min-scale-factor);
+
+            $font-size: $screen-width * $scale-factor / 1px * 1em;
+
+            @media all and (max-width: $screen-width) {
+                font-size: $font-size;
+            }
+
+            $screen-width-step: $font-size-step / $scale-factor / 1em * 1px;
+            @if $screen-width-step < 1px {
+                $screen-width-step: 1px;
+            }
+
+            $screen-width: round($screen-width - $screen-width-step);
+        }
+    }
+}
+
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('OpenSans-Bold-webfont.eot');
+    src: url('OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Bold-webfont.woff') format('woff'),
+         url('OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@mixin bg-gradient($start, $end) {
+    background: -webkit-linear-gradient(left, $start, $end);
+    background: -o-linear-gradient(left, $start, $end);
+    background: -moz-linear-gradient(left, $start, $end);
+    background: -ms-linear-gradient(left, $start, $end);
+    background: linear-gradient(to right, $start, $end);
+}
+
+
+
+body {
+    font-family: open_sansregular;
+    @include bg-gradient(transparentize($green, 0.1), transparentize($blue, 0.1));
+    .modal-open {
+    overflow: hidden;
+    }
+
+
+}
+
+
+
+/* Nav */
+
+.navbar-brand {
+    text-transform: uppercase;
+    @include responsive-font-size (0.938em, 1.875em, 640px, 1200px, 0.3em);
+}
+
+
+/* Form */
+
+.row-no-padding {
+  margin-left: 0;
+  margin-right: 0;
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+
+.procura {
+    @include bg-gradient($green, $blue);
+    color: $white;
+    border: none;
+    
+}
+
+.procura::-webkit-input-placeholder,  { /* WebKit, Blink, Edge */
+    color:    $white;
+}
+.procura:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $white;
+   opacity:  1;
+}
+.procura::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $white;
+   opacity:  1;
+}
+.procura:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    $white;
+}
+
+.procura::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $white;
+}
+.procura:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $white;
+   opacity:  1;
+}
+.procura::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $white;
+   opacity:  1;
+}
+.procura:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    $white;
+}
+
+/* List */
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background: rgba(153, 255, 153, 0.3)
+}
+
+.list {
+    tr{
+            
+            th{
+                font-family: open_sansregular;    
+                color: $white;
+                @include responsive-font-size (0.463em, 1.875em, 320px, 1200px, 0.3em);
+                background: $green+#1a1a1a;
+                border: none !important;
+            }
+            td{     
+                color: $white ;
+                @include responsive-font-size (0.338em, 1em, 320px, 1200px, 0.3em);
+                border: none !important;
+            }
+            
+        }
+    tr:hover{
+        
+        td{
+            background: transparentize($blue, 0.2);
+        }
+    }
+}
+
+.adicionar {
+  @include responsive-font-size (0.938em, 1.475em, 640px, 1200px, 0.3em);
+  position:absolute;
+  width:auto;
+  height:auto;
+  z-index:10;
+}
+
+.remover {
+  @include responsive-font-size (0.938em, 1.475em, 640px, 1200px, 0.3em);
+  position:absolute;
+  width:auto;
+  height:auto;
+  z-index:20;
+}
+
+/* Detail */
+
+.sub {
+    color: $white;
+}
