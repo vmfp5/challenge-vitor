@@ -153,6 +153,13 @@ app.controller("userController", ["$scope", "$http", "$location", "$routeParams"
   listService.get().then(function(response) {
     $scope.lista = response.data;
     $scope.user = $routeParams.user;
+    $scope.users = [];
+    angular.forEach(response.data, function(item) {
+      if (item.email == user) {
+        $scope.users.push(item.id, item.username, item.email);
+      }
+    });
+    return $scope.users;
   }, function(error) {
     console.error(error);
   }).then(function() { // GET FAVORITES
