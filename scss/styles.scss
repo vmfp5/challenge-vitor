@@ -1,7 +1,14 @@
-$formcolor: #CFCFCF;
 $white: #e6e6e6;
-$blue: rgba(33, 160, 171, 1);
-$green: rgba(33, 171, 114, 1);
+$bgcolor: rgba(34, 35, 38, 1);
+$subcolor1: rgba(174, 176, 183, 1);
+$subcolor2: rgba(136, 137, 140, 1);
+$brandcolor: rgba(230, 138, 0, 1);
+$starcolor:#966016;
+
+$size1-min:0.938em;
+$size1-max:1.875em;
+$size2-min:0.338em;
+$size2-max:1em;
 
 @mixin responsive-font-size($min-font-size, $max-font-size, $min-screen-width, $max-screen-width, $font-size-step: 0.1em) {
 
@@ -66,19 +73,13 @@ $green: rgba(33, 171, 114, 1);
 
 }
 
-@mixin bg-gradient($start, $end) {
-    background: -webkit-linear-gradient(left, $start, $end);
-    background: -o-linear-gradient(left, $start, $end);
-    background: -moz-linear-gradient(left, $start, $end);
-    background: -ms-linear-gradient(left, $start, $end);
-    background: linear-gradient(to right, $start, $end);
-}
 
 
 
 body {
     font-family: open_sansregular;
-    @include bg-gradient(transparentize($green, 0.1), transparentize($blue, 0.1));
+    background-color: $bgcolor;
+    color: $white;
     .modal-open {
     overflow: hidden;
     }
@@ -90,9 +91,22 @@ body {
 
 /* Nav */
 
+.glyphicon-headphones {
+  color: $brandcolor;
+  
+}
+
 .navbar-brand {
     text-transform: uppercase;
-    @include responsive-font-size (0.938em, 1.875em, 640px, 1200px, 0.3em);
+    @include responsive-font-size ($size1-min, $size1-max, 640px, 1200px, 0.3em);
+}
+
+.navbar-default {
+    background-color: transparentize($subcolor1, 0.9);
+    border-color: transparentize($subcolor1, 0.9);
+    .navbar-toggle:hover, .navbar-toggle:focus {
+        background-color: transparentize($subcolor1, 0.9);
+    }
 }
 
 
@@ -107,93 +121,109 @@ body {
   }
 }
 
+.form-control:focus{
+    border-bottom: solid 2px $brandcolor !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
 .procura {
-    @include bg-gradient($green, $blue);
+    background-color: inherit;
     color: $white;
     border: none;
+    font-family: open_sansregular, FontAwesome;
+    border-bottom: solid 2px transparentize($brandcolor, 0.4) !important;
     
 }
 
-.procura::-webkit-input-placeholder,  { /* WebKit, Blink, Edge */
-    color:    $white;
-}
-.procura:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    $white;
-   opacity:  1;
-}
-.procura::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    $white;
-   opacity:  1;
-}
-.procura:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    $white;
-}
-
-.procura::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    $white;
-}
-.procura:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    $white;
-   opacity:  1;
-}
-.procura::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    $white;
-   opacity:  1;
-}
-.procura:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    $white;
-}
 
 /* List */
 
-.table-striped>tbody>tr:nth-of-type(odd) {
-    background: rgba(153, 255, 153, 0.3)
-}
+
 
 .list {
     tr{
             
             th{
-                font-family: open_sansregular;    
-                color: $white;
-                @include responsive-font-size (0.463em, 1.875em, 320px, 1200px, 0.3em);
-                background: $green+#1a1a1a;
-                border: none !important;
+                font-family: open_sansbold;    
+                color: $subcolor2;
+                @include responsive-font-size ($size2-min + ($size2-min/10), $size2-max + ($size2-max/10), 640px, 1200px, 0.3em);
+                border-top: none !important;
+                border-bottom: solid 1px transparentize($subcolor2, 0.9) !important;
+                text-transform: uppercase;
             }
             td{     
                 color: $white ;
-                @include responsive-font-size (0.338em, 1em, 320px, 1200px, 0.3em);
+                @include responsive-font-size ($size2-min, $size2-max, 640px, 1200px, 0.3em);
                 border: none !important;
+                border-bottom: solid 1px transparentize($subcolor2, 0.9) !important;
+                padding-bottom:  1.4em !important;
             }
             
         }
     tr:hover{
         
         td{
-            background: transparentize($blue, 0.2);
+            background: transparentize($subcolor1, 0.9);
         }
     }
 }
 
-.adicionar {
-  @include responsive-font-size (0.938em, 1.475em, 640px, 1200px, 0.3em);
+.lista-adicionar {
+  @include responsive-font-size ($size2-min + ($size2-min/5), $size2-max + ($size2-max/5), 640px, 1200px, 0.3em);
   position:absolute;
   width:auto;
   height:auto;
+  color: $starcolor;
   z-index:10;
 }
 
-.remover {
-  @include responsive-font-size (0.938em, 1.475em, 640px, 1200px, 0.3em);
+.lista-remover {
+  @include responsive-font-size ($size2-min + ($size2-min/5), $size2-max + ($size2-max/5), 640px, 1200px, 0.3em);
   position:absolute;
   width:auto;
   height:auto;
+  color: $starcolor;
   z-index:20;
 }
 
 /* Detail */
 
 .sub {
-    color: $white;
+    color: $subcolor2;
+}
+
+hr {
+    border: solid 1px transparentize($subcolor2, 0.9) !important;
+}
+
+.btn-back { 
+    
+    color: transparentize($brandcolor, 0.4);
+    @include responsive-font-size ($size1-min, $size1-max, 640px, 1200px, 0.3em);
+    font-family: open_sansbold;  
+    background: inherit;
+    border: none;
+}
+
+.detail-text {
+    @include responsive-font-size ($size2-min - ($size2-min/10), $size2-max - ($size2-max/10), 640px, 1200px, 0.3em);
+}
+
+.detail-adicionar {
+  @include responsive-font-size ($size1-min + ($size1-min/5), $size1-max + ($size1-max/5), 640px, 1200px, 0.3em);
+  position:absolute;
+  width:auto;
+  height:auto;
+  color: $starcolor;
+  z-index:10;
+}
+
+.detail-remover {
+  @include responsive-font-size ($size1-min + ($size1-min/5), $size1-max + ($size1-max/5), 640px, 1200px, 0.3em);
+  position:absolute;
+  width:auto;
+  height:auto;
+  color: $starcolor;
+  z-index:20;
 }

@@ -88,8 +88,10 @@ app.factory('favsService', function($q, $http, $routeParams) { // GET FAVORITES
 // Controlador da lista
 app.controller("listController", ["$scope", "$http", "$location", "$routeParams", "listService", "userService", function($scope, $http, $location, $routeParams, listService, userService) {
 
+  $scope.showLoader = true;
   listService.get().then(function(response) {
     $scope.lista = response.data;
+    $scope.showLoader = false;
     $scope.user = $routeParams.user;
   }, function(error) {
     console.error(error);
@@ -150,8 +152,10 @@ app.controller("userController", ["$scope", "$http", "$location", "$routeParams"
     return $scope.users;
   });
 
+  $scope.showLoader = true;
   listService.get().then(function(response) {
     $scope.lista = response.data;
+    $scope.showLoader = false;
     $scope.user = $routeParams.user;
   }, function(error) {
     console.error(error);
@@ -255,11 +259,17 @@ app.controller("userController", ["$scope", "$http", "$location", "$routeParams"
 }]);
 
 
-app.controller("detailController", ["$scope", "$http", "$location", "$routeParams", "listService", "userService", function($scope, $http, $location, $routeParams, listService, userService) {
+app.controller("detailController", ["$scope", "$http", "$location", "$window", "$routeParams", "listService", "userService", function($scope, $http, $location, $window, $routeParams, listService, userService) {
 
 
+  $scope.goBack = function() {
+    window.history.back();
+  };
+
+  $scope.showLoader = true;
   listService.get().then(function(response) { // Qual Detalhe
     $scope.item = response.data[parseInt($routeParams.index)];
+    $scope.showLoader = false;
   }, function(error) {
     console.error(error);
   });
