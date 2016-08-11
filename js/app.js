@@ -263,11 +263,13 @@ app.controller("detailController", ["$scope", "$http", "$location", "$window", "
 
 
   $scope.goBack = function() {
-    window.history.back();
+    if( $window.history.length < 1 ) {
+      $location.path("/items/");
+    } else{
+        window.history.back();
+    }
   };
   
-
-  $scope.checkHist = $window.history.length;
 
   $scope.showLoader = true;
   listService.get().then(function(response) { // Qual Detalhe
