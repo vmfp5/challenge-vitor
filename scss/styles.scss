@@ -185,7 +185,7 @@ body {
 .lista-adicionar {
   font-size: $size1-max * 1.3;
   position:absolute;
-  margin-top: 5px;
+  margin-top: -5px;
   width:auto;
   height:auto;
   color: $starcolor;
@@ -195,7 +195,7 @@ body {
 .lista-remover {
   font-size: $size1-max * 1.3;
   position:absolute;
-  margin-top: 5px;
+  margin-top: -5px;
   width:auto;
   height:auto;
   color: $starcolor;
