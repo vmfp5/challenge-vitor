@@ -109,44 +109,22 @@ body {
   background: rgba(174, 176, 183, 0.1); }
 
 .lista-adicionar {
-  font-size: 2em;
+  font-size: 2.4375em;
   position: absolute;
+  margin-top: 5px;
   width: auto;
   height: auto;
   color: #966016;
   z-index: 10; }
-  @media all and (max-width: 640px) {
-    .lista-adicionar {
-      font-size: 0.676em; } }
-  @media all and (max-width: 1200px) {
-    .lista-adicionar {
-      font-size: 2em; } }
-  @media all and (max-width: 1020px) {
-    .lista-adicionar {
-      font-size: 1.49987em; } }
-  @media all and (max-width: 816px) {
-    .lista-adicionar {
-      font-size: 1.01845em; } }
 
 .lista-remover {
-  font-size: 2em;
+  font-size: 2.4375em;
   position: absolute;
+  margin-top: 5px;
   width: auto;
   height: auto;
   color: #966016;
   z-index: 20; }
-  @media all and (max-width: 640px) {
-    .lista-remover {
-      font-size: 0.676em; } }
-  @media all and (max-width: 1200px) {
-    .lista-remover {
-      font-size: 2em; } }
-  @media all and (max-width: 1020px) {
-    .lista-remover {
-      font-size: 1.49987em; } }
-  @media all and (max-width: 816px) {
-    .lista-remover {
-      font-size: 1.01845em; } }
 
 /* Detail */
 .sub {
