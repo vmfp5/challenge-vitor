@@ -23,19 +23,19 @@ body {
 
 .navbar-brand {
   text-transform: uppercase;
-  font-size: 1.875em; }
+  font-size: 1.5em; }
   @media all and (max-width: 640px) {
     .navbar-brand {
       font-size: 0.938em; } }
   @media all and (max-width: 1200px) {
     .navbar-brand {
-      font-size: 1.875em; } }
-  @media all and (max-width: 1008px) {
+      font-size: 1.5em; } }
+  @media all and (max-width: 960px) {
     .navbar-brand {
-      font-size: 1.54152em; } }
-  @media all and (max-width: 812px) {
+      font-size: 1.28871em; } }
+  @media all and (max-width: 737px) {
     .navbar-brand {
-      font-size: 1.21425em; } }
+      font-size: 1.05264em; } }
 
 .navbar-default {
   background-color: rgba(174, 176, 183, 0.1);
@@ -130,27 +130,11 @@ body {
 .sub {
   color: #88898c; }
 
-hr {
-  border: solid 1px rgba(136, 137, 140, 0.1) !important; }
+.glyphicon-chevron-left {
+  color: #e68a00; }
 
 .btn-back {
-  color: rgba(230, 138, 0, 0.6);
-  font-size: 1.875em;
-  font-family: open_sansbold;
-  background: inherit;
-  border: none; }
-  @media all and (max-width: 640px) {
-    .btn-back {
-      font-size: 0.938em; } }
-  @media all and (max-width: 1200px) {
-    .btn-back {
-      font-size: 1.875em; } }
-  @media all and (max-width: 1008px) {
-    .btn-back {
-      font-size: 1.54152em; } }
-  @media all and (max-width: 812px) {
-    .btn-back {
-      font-size: 1.21425em; } }
+  cursor: pointer; }
 
 .detail-text {
   font-size: 1em; }
@@ -165,7 +149,7 @@ hr {
       font-size: 0.82038em; } }
 
 .detail-adicionar {
-  font-size: 3.75em;
+  font-size: 2.8125em;
   position: absolute;
   right: 10px;
   width: auto;
@@ -177,25 +161,22 @@ hr {
       font-size: 1.876em; } }
   @media all and (max-width: 1200px) {
     .detail-adicionar {
-      font-size: 3.75em; } }
-  @media all and (max-width: 1104px) {
+      font-size: 2.8125em; } }
+  @media all and (max-width: 1072px) {
     .detail-adicionar {
-      font-size: 3.41333em; } }
-  @media all and (max-width: 1007px) {
+      font-size: 2.65645em; } }
+  @media all and (max-width: 951px) {
     .detail-adicionar {
-      font-size: 3.07963em; } }
-  @media all and (max-width: 909px) {
+      font-size: 2.47733em; } }
+  @media all and (max-width: 836px) {
     .detail-adicionar {
-      font-size: 2.74911em; } }
-  @media all and (max-width: 810px) {
+      font-size: 2.27862em; } }
+  @media all and (max-width: 726px) {
     .detail-adicionar {
-      font-size: 2.42195em; } }
-  @media all and (max-width: 710px) {
-    .detail-adicionar {
-      font-size: 2.09838em; } }
+      font-size: 2.06259em; } }
 
 .detail-remover {
-  font-size: 3.75em;
+  font-size: 2.8125em;
   position: absolute;
   right: 10px;
   width: auto;
@@ -207,19 +188,16 @@ hr {
       font-size: 1.876em; } }
   @media all and (max-width: 1200px) {
     .detail-remover {
-      font-size: 3.75em; } }
-  @media all and (max-width: 1104px) {
+      font-size: 2.8125em; } }
+  @media all and (max-width: 1072px) {
     .detail-remover {
-      font-size: 3.41333em; } }
-  @media all and (max-width: 1007px) {
+      font-size: 2.65645em; } }
+  @media all and (max-width: 951px) {
     .detail-remover {
-      font-size: 3.07963em; } }
-  @media all and (max-width: 909px) {
+      font-size: 2.47733em; } }
+  @media all and (max-width: 836px) {
     .detail-remover {
-      font-size: 2.74911em; } }
-  @media all and (max-width: 810px) {
+      font-size: 2.27862em; } }
+  @media all and (max-width: 726px) {
     .detail-remover {
-      font-size: 2.42195em; } }
-  @media all and (max-width: 710px) {
-    .detail-remover {
-      font-size: 2.09838em; } }
+      font-size: 2.06259em; } }

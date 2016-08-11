@@ -98,7 +98,7 @@ body {
 
 .navbar-brand {
     text-transform: uppercase;
-    @include responsive-font-size ($size1-min, $size1-max, 640px, 1200px, 0.3em);
+    @include responsive-font-size ($size1-min, $size1-max * 0.8, 640px, 1200px, 0.3em);
 }
 
 .navbar-default {
@@ -208,17 +208,18 @@ body {
     color: $subcolor2;
 }
 
-hr {
-    border: solid 1px transparentize($subcolor2, 0.9) !important;
+
+.glyphicon-chevron-left { 
+    
+    color: $brandcolor;
+
 }
 
 .btn-back { 
     
-    color: transparentize($brandcolor, 0.4);
-    @include responsive-font-size ($size1-min, $size1-max, 640px, 1200px, 0.3em);
-    font-family: open_sansbold;  
-    background: inherit;
-    border: none;
+   
+    cursor: pointer;
+
 }
 
 .detail-text {
@@ -226,7 +227,7 @@ hr {
 }
 
 .detail-adicionar {
-  @include responsive-font-size ($size1-min * 2, $size1-max * 2, 640px, 1200px, 0.3em);
+  @include responsive-font-size ($size1-min * 2, $size1-max * 1.5, 640px, 1200px, 0.3em);
   position:absolute;
   right: 10px;
   width:auto;
@@ -236,7 +237,7 @@ hr {
 }
 
 .detail-remover {
-  @include responsive-font-size ($size1-min * 2, $size1-max * 2, 640px, 1200px, 0.3em);
+  @include responsive-font-size ($size1-min * 2, $size1-max * 1.5, 640px, 1200px, 0.3em);
   position:absolute;
   right: 10px;
   width:auto;
