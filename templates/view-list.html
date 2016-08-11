@@ -19,7 +19,9 @@
         <div class="form-group">
           <input type="email" size="50" class="form-control" placeholder="Enter your email to check favorites" ng-model="user.email">
         </div>
-        <button type="submit" class="btn btn-default" ng-click="fetchUsers(user.email)">Submit</button>
+        <ul class="nav navbar-nav navbar-right">
+          <li><button type="submit" class="btn btn-default" ng-click="fetchUsers(user.email)">Submit</button></li>
+        </ul>
       </form>
 
     </div>

@@ -107,8 +107,17 @@ body {
     .navbar-toggle:hover, .navbar-toggle:focus {
         background-color: transparentize($subcolor1, 0.9);
     }
+    .navbar-nav>li>a:hover {
+    background-color: transparentize($brandcolor, 0.8) !important;
+    }
+    .navbar-nav>.active>a , .navbar-nav>.active>a:hover , .navbar-nav>.active>a:focus {
+        background-color: transparentize($brandcolor, 0.4) !important;
+    }
 }
 
+.btn-default {
+    width:100%;
+}
 
 /* Form */
 
@@ -122,9 +131,13 @@ body {
 }
 
 .form-control:focus{
-    border-bottom: solid 2px $brandcolor !important;
     -webkit-box-shadow: none;
     box-shadow: none;
+    border: none;
+}
+
+.procura:focus {
+    border-bottom: solid 2px $brandcolor !important;
 }
 
 .procura {
@@ -170,7 +183,7 @@ body {
 }
 
 .lista-adicionar {
-  @include responsive-font-size ($size2-min + ($size2-min/5), $size2-max + ($size2-max/5), 640px, 1200px, 0.3em);
+  @include responsive-font-size ($size2-min * 2, $size2-max * 2, 640px, 1200px, 0.3em);
   position:absolute;
   width:auto;
   height:auto;
@@ -179,7 +192,7 @@ body {
 }
 
 .lista-remover {
-  @include responsive-font-size ($size2-min + ($size2-min/5), $size2-max + ($size2-max/5), 640px, 1200px, 0.3em);
+  @include responsive-font-size ($size2-min * 2, $size2-max * 2, 640px, 1200px, 0.3em);
   position:absolute;
   width:auto;
   height:auto;
@@ -207,12 +220,13 @@ hr {
 }
 
 .detail-text {
-    @include responsive-font-size ($size2-min - ($size2-min/10), $size2-max - ($size2-max/10), 640px, 1200px, 0.3em);
+    @include responsive-font-size ($size2-min * 2, $size2-max, 640px, 1200px, 0.3em);
 }
 
 .detail-adicionar {
-  @include responsive-font-size ($size1-min + ($size1-min/5), $size1-max + ($size1-max/5), 640px, 1200px, 0.3em);
+  @include responsive-font-size ($size1-min * 2, $size1-max * 2, 640px, 1200px, 0.3em);
   position:absolute;
+  right: 10px;
   width:auto;
   height:auto;
   color: $starcolor;
@@ -220,8 +234,9 @@ hr {
 }
 
 .detail-remover {
-  @include responsive-font-size ($size1-min + ($size1-min/5), $size1-max + ($size1-max/5), 640px, 1200px, 0.3em);
+  @include responsive-font-size ($size1-min * 2, $size1-max * 2, 640px, 1200px, 0.3em);
   position:absolute;
+  right: 10px;
   width:auto;
   height:auto;
   color: $starcolor;
